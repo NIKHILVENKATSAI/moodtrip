@@ -1,5 +1,7 @@
 import CursorGlow from "../components/CursorGlow"
 import PageTransition from "../components/PageTransition"
+import Footer from "../components/Footer"
+
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
@@ -25,14 +27,14 @@ function Home() {
 
           <h1
             style={{ fontFamily: "Instrument" }}
-            className="text-3xl md:text-4xl"
+            className="text-3xl md:text-4xl text-white"
           >
             MoodTrip.
           </h1>
 
           <Link to="/explore">
 
-            <button className="px-4 md:px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300 text-sm md:text-base">
+            <button className="px-4 md:px-5 py-2 rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-xl hover:bg-white/10 transition duration-300 text-sm md:text-base">
               Explore
             </button>
 
@@ -51,11 +53,11 @@ function Home() {
             className="max-w-6xl"
           >
 
-            <p className="uppercase tracking-[0.35em] text-neutral-500 text-xs md:text-sm mb-8 md:mb-10">
+            <p className="uppercase tracking-[0.35em] text-neutral-400 text-xs md:text-sm mb-8 md:mb-10">
               Emotional Travel Experience
             </p>
 
-            <h1 className="text-5xl sm:text-6xl md:text-[140px] leading-[0.95] font-medium">
+            <h1 className="text-white text-5xl sm:text-6xl md:text-[140px] leading-[0.95] font-medium">
 
               Every emotion
               <br />
@@ -71,7 +73,7 @@ function Home() {
 
             </h1>
 
-            <p className="text-neutral-400 text-lg md:text-xl mt-10 md:mt-12 leading-relaxed max-w-2xl">
+            <p className="text-neutral-300 text-lg md:text-xl mt-10 md:mt-12 leading-relaxed max-w-2xl">
               Discover cinematic places based on your emotions,
               atmosphere, and inner feelings.
             </p>
@@ -87,6 +89,75 @@ function Home() {
           </motion.div>
 
         </div>
+
+        {/* WHY MOODTRIP */}
+
+        <section className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pb-32">
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            <div className="border border-white/10 rounded-[30px] p-10 bg-white/[0.03] backdrop-blur-xl">
+
+              <p className="text-white/40 text-sm uppercase tracking-[0.3em] mb-6">
+                Emotional
+              </p>
+
+              <h3
+                style={{ fontFamily: "Instrument" }}
+                className="text-4xl text-white"
+              >
+                Travel by feeling.
+              </h3>
+
+              <p className="text-white/60 mt-6 leading-relaxed">
+                Discover destinations based on moods, emotions, and atmosphere instead of ordinary search.
+              </p>
+
+            </div>
+
+            <div className="border border-white/10 rounded-[30px] p-10 bg-white/[0.03] backdrop-blur-xl">
+
+              <p className="text-white/40 text-sm uppercase tracking-[0.3em] mb-6">
+                Cinematic
+              </p>
+
+              <h3
+                style={{ fontFamily: "Instrument" }}
+                className="text-4xl text-white"
+              >
+                Immersive places.
+              </h3>
+
+              <p className="text-white/60 mt-6 leading-relaxed">
+                Every destination is chosen to match emotional experiences and visual storytelling.
+              </p>
+
+            </div>
+
+            <div className="border border-white/10 rounded-[30px] p-10 bg-white/[0.03] backdrop-blur-xl">
+
+              <p className="text-white/40 text-sm uppercase tracking-[0.3em] mb-6">
+                Modern
+              </p>
+
+              <h3
+                style={{ fontFamily: "Instrument" }}
+                className="text-4xl text-white"
+              >
+                Designed beautifully.
+              </h3>
+
+              <p className="text-white/60 mt-6 leading-relaxed">
+                Minimal design, smooth interactions, and cinematic visuals create a premium experience.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <Footer />
 
       </div>
 

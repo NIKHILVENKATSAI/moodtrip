@@ -1,12 +1,10 @@
+import Footer from "../components/Footer"
 import PageTransition from "../components/PageTransition"
 import { motion } from "framer-motion"
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import Navbar from "../components/Navbar"
 
 function Explore() {
-
-  const [search, setSearch] = useState("")
 
   const moods = [
 
@@ -40,10 +38,6 @@ function Explore() {
 
   ]
 
-  const filteredMoods = moods.filter((mood) =>
-    mood.title.toLowerCase().includes(search.toLowerCase())
-  )
-
   return (
 
     <PageTransition>
@@ -60,7 +54,7 @@ function Explore() {
 
         {/* HEADER */}
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 pt-40">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-40">
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -68,11 +62,11 @@ function Explore() {
             transition={{ duration: 1 }}
           >
 
-            <p className="uppercase tracking-[0.35em] text-neutral-500 text-sm mb-8">
+            <p className="uppercase tracking-[0.35em] text-neutral-500 text-xs md:text-sm mb-8">
               Choose Your Emotion
             </p>
 
-            <h1 className="text-7xl md:text-[120px] leading-[0.9] font-medium max-w-5xl">
+            <h1 className="text-5xl sm:text-6xl md:text-[120px] leading-[0.9] font-medium max-w-5xl">
 
               How are you
               <br />
@@ -81,7 +75,7 @@ function Explore() {
 
               <span
                 style={{ fontFamily: "Instrument" }}
-                className="italic ml-5"
+                className="italic ml-3 md:ml-5"
               >
                 today?
               </span>
@@ -90,25 +84,11 @@ function Explore() {
 
           </motion.div>
 
-          {/* SEARCH BAR */}
-
-          <div className="mt-16">
-
-            <input
-              type="text"
-              placeholder="Search moods..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full md:w-[400px] px-6 py-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl outline-none text-white placeholder:text-white/30 focus:border-white/20 transition"
-            />
-
-          </div>
-
           {/* MOOD GRID */}
 
-          <div className="grid md:grid-cols-2 gap-8 mt-20 pb-24">
+          <div className="grid md:grid-cols-2 gap-8 mt-24 pb-24">
 
-            {filteredMoods.map((mood, index) => (
+            {moods.map((mood, index) => (
 
               <motion.div
                 key={mood.title}
@@ -140,7 +120,7 @@ function Explore() {
 
                         <h2
                           style={{ fontFamily: "Instrument" }}
-                          className="text-6xl mt-6 group-hover:translate-x-2 transition duration-500"
+                          className="text-5xl md:text-6xl mt-6 group-hover:translate-x-2 transition duration-500"
                         >
                           {mood.title}
                         </h2>
@@ -149,7 +129,7 @@ function Explore() {
 
                       <div>
 
-                        <p className="text-white/70 text-lg leading-relaxed max-w-sm">
+                        <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-sm">
                           {mood.description}
                         </p>
 
@@ -177,9 +157,11 @@ function Explore() {
 
         </div>
 
-      </div>
+      <Footer />
 
-    </PageTransition>
+</div>
+
+</PageTransition>
 
   )
 }

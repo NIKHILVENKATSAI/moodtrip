@@ -23,6 +23,24 @@ function Adventure() {
         "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
     },
 
+    {
+      name: "Amazon Forest",
+      image:
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop",
+    },
+
+    {
+      name: "Nepal Mountains",
+      image:
+        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+    },
+
+    {
+      name: "Sahara Desert",
+      image:
+        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop",
+    },
+
   ]
 
   return (
@@ -47,7 +65,7 @@ function Adventure() {
 
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
 
-          <div className="absolute bottom-20 left-10 md:left-20 z-10">
+          <div className="absolute bottom-20 left-6 md:left-20 z-10">
 
             <p className="uppercase tracking-[0.4em] text-sm text-white/60">
               Adventure Mood
@@ -55,13 +73,13 @@ function Adventure() {
 
             <h1
               style={{ fontFamily: "Instrument" }}
-              className="text-7xl md:text-[140px] mt-4"
+              className="text-6xl md:text-[140px] mt-4"
             >
               Adventure.
             </h1>
 
-            <p className="text-xl text-white/70 mt-6 max-w-2xl">
-              Wild energy, hidden places, freedom, and unforgettable experiences.
+            <p className="text-lg md:text-xl text-white/70 mt-6 max-w-2xl">
+              Wild energy, freedom, hidden places, and unforgettable experiences.
             </p>
 
           </div>
@@ -70,37 +88,53 @@ function Adventure() {
 
         {/* CARDS */}
 
-        <div className="max-w-7xl mx-auto px-8 py-24 grid md:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-24">
 
-          {places.map((place) => (
+          <div className="mb-16">
 
-            <div
-              key={place.name}
-              className="group relative overflow-hidden rounded-[30px] h-[420px]"
-            >
+            <p className="uppercase tracking-[0.35em] text-white/40 text-sm">
+              Adventure Destinations
+            </p>
 
-              <img
-                src={place.image}
-                alt=""
-                className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-              />
+            <h2 className="text-4xl md:text-5xl mt-4">
+              Places built for exploration.
+            </h2>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          </div>
 
-              <div className="absolute bottom-0 left-0 p-8">
+          <div className="grid md:grid-cols-3 gap-8">
 
-                <h2
-                  style={{ fontFamily: "Instrument" }}
-                  className="text-4xl"
-                >
-                  {place.name}
-                </h2>
+            {places.map((place) => (
+
+              <div
+                key={place.name}
+                className="group relative overflow-hidden rounded-[30px] h-[420px]"
+              >
+
+                <img
+                  src={place.image}
+                  alt=""
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+                <div className="absolute bottom-0 left-0 p-8">
+
+                  <h2
+                    style={{ fontFamily: "Instrument" }}
+                    className="text-4xl"
+                  >
+                    {place.name}
+                  </h2>
+
+                </div>
 
               </div>
 
-            </div>
+            ))}
 
-          ))}
+          </div>
 
         </div>
 
